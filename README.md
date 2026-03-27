@@ -126,8 +126,8 @@ Run the entire app locally with just **Git** and **Docker**. No Node.js, Python,
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/tristcoil/zero-sum.git
-cd zero-sum
+git clone https://github.com/tristcoil/zero-sum-public.git
+cd zero-sum-public
 ```
 
 ### 2. Create the config file
