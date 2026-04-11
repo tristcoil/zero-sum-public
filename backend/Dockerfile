@@ -12,9 +12,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Ensure entrypoint has Linux line endings and is executable
+RUN sed -i 's/\r$//' entrypoint.sh && chmod +x entrypoint.sh
+
 # Keep a seed copy of pre-generated analysis files so the entrypoint
 # can populate an empty volume mount on first deploy.
-RUN cp -r static_analysis _seed_analysis
+RUN mkdir -p static_analysis && cp -r static_analysis _seed_analysis
 
 EXPOSE 5000
 
